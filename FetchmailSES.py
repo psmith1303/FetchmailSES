@@ -21,7 +21,7 @@ api_base_url = 'https://api.smashrun.com/v1/my/'
 options_verbose = 0
 options_maildir = '~/NAS/Backups/Maildir'
 options_s3bucket = 'mailbox.petersmith.org'
-options_keepmail = True # If True then the mail of the server is not deleted after it is downloaded
+options_keepmail = False # If True then the mail of the server is not deleted after it is downloaded
 
 
 
@@ -103,7 +103,7 @@ def parse_args():
 
 def fetch_mail():
     s3 = boto3.resource('s3')
-    print(options_s3bucket)
+    vlog(1, options_s3bucket)
     bucket = s3.Bucket(options_s3bucket)
     # Iterates through all the objects, doing the pagination for you. Each obj
     # is an ObjectSummary, so it doesn't contain the body. You'll need to call
