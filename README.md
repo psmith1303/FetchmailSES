@@ -10,16 +10,19 @@ This assumes you have installed the boto3 library and configured it correctly (w
 
 You'll need to configure the particular directory you want to use and the S3 bucket. In my case it is:
 
+``` python
 options_maildir = '~/NAS/Backups/Maildir'
 options_s3bucket = 'mailbox.petersmith.org'
 options_keepmail = True 
+```
+
 
 Setting the options keepmail to False will delete all the mail once it has been transferred. Alternatively, you can use the `--keepmail` option when running the programme.
 
 ### Usuage
 Easy, it's just
 
-```
+```bash
 FetchmailSES.py
 ```
 
